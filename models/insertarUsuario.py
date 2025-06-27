@@ -12,8 +12,10 @@ def insertarUsuario(email, password, nombre, esAdmin=0):
         hashed = bcrypt.hashpw(passwordBytes, bcrypt.gensalt())
         hashedStr = hashed.decode('utf-8')
 
+        print("Hasta aca funciona" )
         cursor.execute(""" INSERT INTO usuarios(email, password, nombre, esAdmin)
                        VALUES (?,?,?,?)""", (email, hashedStr, nombre, esAdmin))
+        
         
         conn.commit()
         conn.close()
