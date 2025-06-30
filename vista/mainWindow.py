@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QStackedWidget
+from PyQt5.QtWidgets import QMainWindow, QStackedWidget,QPushButton
 from vista.loginWindow import LoginWindow
 from vista.dashboardAdmin import DashboardAdmin
 from vista.registroAdmin import RegistroAdmin
@@ -33,3 +33,15 @@ class MainWindow(QMainWindow):
 
     def mostrarDashboard(self):
         self.stack.setCurrentIndex(3)
+
+    def reemplazarLogin(self, NuevaClaseLogin):
+    # Eliminar del stack y liberar memoria
+        self.stack.removeWidget(self.loginScreen)
+        self.loginScreen.deleteLater()
+
+    # Crear nueva instancia
+        self.loginScreen = NuevaClaseLogin(self)
+        self.stack.insertWidget(1, self.loginScreen)
+
+    # Mostrar login nuevo
+        self.stack.setCurrentIndex(1)

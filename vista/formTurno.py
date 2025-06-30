@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButto
 from PyQt5.QtCore import QDate, QTime, Qt
 from models.turnoFactory import TurnoFactory
 from models.insertarTurno import insertarTurno
-
+from vista.estilosCss import estilosForm
 class FormTurno(QWidget):
     def __init__(self):
         super().__init__()
@@ -44,7 +44,8 @@ class FormTurno(QWidget):
         layout.addWidget(self.mensaje)
 
         self.setLayout(layout)
-
+        self.darStilos()
+        
     def guardarTurno(self):
         nombre = self.inputNombre.text().strip()
         servicio = self.comboServicio.currentText()
@@ -73,6 +74,9 @@ class FormTurno(QWidget):
 
     def volver(self):
         self.mainWindow.stack.setCurrentWidget(self.mainWindow.loginScreen)
+
+    def darStilos(self):
+        self.setStyleSheet(estilosForm)
 
 
 

@@ -5,6 +5,8 @@ from vista.formTurno import FormTurno
 from vista.todosLosTurnos import TodosLosTurnos
 from controladores.estadisticas.obtenerDatosTurnos import obtenerDatosTurnos, estadisticasLocalidad
 from vista.estadisticasPorLocalidad import EstadisticasLocalidadWidget
+from vista.estilosCss import estiloBoton, estiloTabla
+
 
 class DashboardAdmin(QWidget):
     def __init__(self, mainWindow):
@@ -26,30 +28,31 @@ class DashboardAdmin(QWidget):
         self.tablaTurnos.setHorizontalHeaderLabels(["Nombre", "Servicio", "Hora", "Localidad"])
         mainLayout.addWidget(self.tablaTurnos)
 
-        botonesLayout = QHBoxLayout()
+        self.botonesLayout = QHBoxLayout()
         
         self.botonNuevo = QPushButton("Nuevo turno")
         self.botonNuevo.clicked.connect(self.abrirFormTurnos)
-        botonesLayout.addWidget(self.botonNuevo)
+        self.botonesLayout.addWidget(self.botonNuevo)
 
         self.botonVerTodos= QPushButton("Ver todos los turnos")
         self.botonVerTodos.clicked.connect(self.verTodosLosTurnos)
-        botonesLayout.addWidget(self.botonVerTodos)
+        self.botonesLayout.addWidget(self.botonVerTodos)
 
         self.botonVolver = QPushButton("← Volver")
         self.botonVolver.clicked.connect(self.volver)
-        botonesLayout.addWidget(self.botonVolver)
+        self.botonesLayout.addWidget(self.botonVolver)
 
         self.botonEstadisticas = QPushButton("Ver estadísticas")
         self.botonEstadisticas.clicked.connect(self.mostrarEstadisticas)
-        botonesLayout.addWidget(self.botonEstadisticas)
+        self.botonesLayout.addWidget(self.botonEstadisticas)
 
         botonesWidget = QWidget()
-        botonesWidget.setLayout(botonesLayout)
+        botonesWidget.setLayout(self.botonesLayout)
         mainLayout.addWidget(botonesWidget)
 
         self.setLayout(mainLayout)
         self.cargarTurnosDelDia()
+        self.darStilos()
 
     def cargarTurnosDelDia(self):
         conn = sqlite3.connect("models/turnosCompletos.db")
@@ -83,6 +86,20 @@ class DashboardAdmin(QWidget):
         conteo = estadisticasLocalidad(df)
         self.estadisticasWidget = EstadisticasLocalidadWidget(conteo)
         self.estadisticasWidget.show()
+
+    def darStilos(self):
+        self.tablaTurnos.setStyleSheet(estiloTabla)
+        self.botonNuevo.setStyleSheet(estiloBoton)
+        self.botonVerTodos.setStyleSheet(estiloBoton)
+        self.botonVolver.setStyleSheet(estiloBoton)
+        self.botonEstadisticas.setStyleSheet(estiloBoton)
+
+        self.tablaTurnos.resizeRowsToContents()
+        self.tablaTurnos.resizeColumnsToContents()
+
+
+
+    
 
      
 
