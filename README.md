@@ -11,6 +11,15 @@
 
 </div>
 
+## 📦 Tecnologías utilizadas
+
+- **Lenguaje:** Python 3.x  
+- **Interfaz gráfica:** PyQt5  
+- **Base de datos:** SQLite3  
+- **Análisis y gráficos:** Pandas, Matplotlib  
+- **Seguridad:** Bcrypt para hashing de contraseñas
+
+
 
 En este repositorio se encuentran los archivos relacionados al trabajo práctico final integrador de la materia Programación Avanzada.
 
