@@ -3,19 +3,13 @@
 
 
 
-- **Lenguaje de Programación:**
-  - [Python 3](https://www.python.org/)
+<div align="center">
 
-- **Interfaz Gráfica:**
-  - [PyQt5](https://riverbankcomputing.com/software/pyqt/intro) 
+[![Versión](https://img.shields.io/badge/version-1.0.0-blue)]()
+[![Licencia](https://img.shields.io/badge/license-MIT-green)]()
+[![Stack](https://img.shields.io/badge/Stack-Python%20%7C%20PyQt5%20%7C%20SQLite%20%7C%20Pandas%20%7C%20Matplotlib-informational)]()
 
-- **Base de Datos:**
-  - [SQLite](https://www.sqlite.org/) 
-
-- **Librerías de Análisis y Visualización de Datos:**
-
-  - [Pandas](https://pandas.pydata.org/) 
-  - [Matplotlib](https://matplotlib.org/)
+</div>
 
 
 En este repositorio se encuentran los archivos relacionados al trabajo práctico final integrador de la materia Programación Avanzada.
