@@ -17,7 +17,6 @@
 - **Interfaz gráfica:** PyQt5  
 - **Base de datos:** SQLite3  
 - **Análisis y gráficos:** Pandas, Matplotlib  
-- **Seguridad:** Bcrypt para hashing de contraseñas
 
 <br>
 
