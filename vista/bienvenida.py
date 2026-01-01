@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QPushButton
 from PyQt5.QtCore import Qt
 from vista.loginWindow import LoginWindow
-from vista.registroAdmin import RegistroAdmin
+from vista.registroUsuario import RegistroUsuario
 from vista.loginStylosFondo import LoginStyloFondo
 from vista.estilosCss import estiloBoton,estilosContenedorPrincipal, estiloTitulo
 
@@ -32,7 +32,7 @@ class Bienvenida(QWidget):
         self.botonLogin.clicked.connect(self.abrirLogin)
         layoutPrincipal.addWidget(self.botonLogin)
 
-        self.botonRegistro = QPushButton("Registrarse como Admin")
+        self.botonRegistro = QPushButton("Registrarse")
         self.botonRegistro.clicked.connect(self.abrirRegistro)
         layoutPrincipal.addWidget(self.botonRegistro)
 

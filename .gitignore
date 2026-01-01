@@ -1,0 +1,20 @@
+# Archivos compilados de Python (basura)
+__pycache__/
+*.pyc
+
+# Base de datos (Opcional: si querés subirla con datos dejala, si no, descomentá abajo)
+# *.db
+
+# Carpetas de entornos virtuales (MUY IMPORTANTE NO SUBIR ESTO)
+venv/
+env/
+.env
+.venv/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
+branch_structure.json
